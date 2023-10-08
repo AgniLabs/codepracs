@@ -1,14 +1,17 @@
-# next-template
+# codepracs
 
-A Next.js 13 template for building apps with Radix UI and Tailwind CSS.
+This is the repository for codepracs, the go-to place where all sorts of developers can get best practices with practical and proven tips, techniques, and guides to feel ready to jump right in
 
 ## Usage
 
 ```bash
-npx create-next-app -e https://github.com/shadcn/next-template
+bunx create-next-app -e https://github.com/AgniLabs/codepracs
+cd codepracs
+sh .env.example
+bun run dev
 ```
 
-## Features
+## Tech Stack
 
 - Next.js 13 App Directory
 - Radix UI Primitives
@@ -16,7 +19,10 @@ npx create-next-app -e https://github.com/shadcn/next-template
 - Icons from [Lucide](https://lucide.dev)
 - Dark mode with `next-themes`
 - Tailwind CSS class sorting, merging and linting.
+- Contentlayer
+- Bun from [Bun](https://bun.sh) (can use without bun)
+- [Shadcn UI](https://ui.shadcn.com/)
 
-## License
+## Contributing
 
-Licensed under the [MIT license](https://github.com/shadcn/ui/blob/main/LICENSE.md).
+Create a pull request with any changes!
