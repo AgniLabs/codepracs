@@ -83,7 +83,7 @@ export default async function TopicPage({ params }: TopicPageProps) {
 
     return (
         <div>
-            <h1 className='mt-2 block text-center text-3xl font-extrabold leading-8 tracking-tight text-gray-900 sm:text-4xl'>
+            <h1 className='mt-2 block text-center text-3xl font-extrabold leading-8 tracking-tight sm:text-4xl'>
                 {topic.title}
             </h1>
             <time className="my-4 block text-sm text-zinc-400" dateTime={topic.date}>
