@@ -16,7 +16,7 @@
     "typecheck": "tsc --noEmit",
     "format:write": "prettier --write \"**/*.{ts,tsx,mdx}\" --cache",
     "format:check": "prettier --check \"**/*.{ts,tsx,mdx}\" --cache",
-    "prepare": "husky install"
+    "prepare": "husky install | chmod ug+x .husky/*"
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.0.2",
