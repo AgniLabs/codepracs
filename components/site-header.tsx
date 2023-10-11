@@ -39,7 +39,7 @@ export function SiteHeader() {
                   variant: "ghost",
                 })}
               >
-                <Icons.twitter className="h-5 w-5 fill-current" />
+                <Icons.twitterX className="h-5 w-5 fill-current" />
                 <span className="sr-only">Twitter</span>
               </div>
             </Link>
