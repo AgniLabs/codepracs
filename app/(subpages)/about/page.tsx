@@ -1,10 +1,9 @@
-import Link from "next/link"
-
+import { env } from "@/env.mjs"
 export const metadata = {
     title: 'About',
     description: 'About codepracs.',
     alternates: {
-        canonical: 'https://codepracs.com/about',
+        canonical: `${env.NEXT_PUBLIC_APP_URL}/about`,
     },
 }
 

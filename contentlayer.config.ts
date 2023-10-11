@@ -10,7 +10,7 @@ const computedFields: import("contentlayer/source-files").ComputedFields = {
   slug: {
     type: "string",
     resolve: (topic: { _raw: { flattenedPath: any } }) =>
-      `/${topic._raw.flattenedPath}`,
+      `/topics/${topic._raw.flattenedPath}`,
   },
   slugAsParams: {
     type: "string",
@@ -47,10 +47,6 @@ export default makeSource({
   contentDirPath: "topics",
   documentTypes: [Topic],
   mdx: {
-    esbuildOptions(options) {
-      options.target = "esnext"
-      return options
-    },
     remarkPlugins: [remarkGfm],
     rehypePlugins: [
       rehypeSlug,

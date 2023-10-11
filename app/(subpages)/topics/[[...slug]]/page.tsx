@@ -13,19 +13,20 @@ interface TopicPageProps {
     }
 }
 
-function getTopicFromParams(params: { slug: any }) {
-    const slug = params.slug?.join("/") || ""
+async function getTopicFromParams(params: { slug: string[] }) {
+    const slug = params?.slug?.join("/")
     const topic = allTopics.find((topic) => topic._raw.flattenedPath === slug)
-    console.log("topic", topic)
 
     if (!topic) {
-        null
+        return null
     }
 
     return topic
 }
 
-export async function generateStaticParams() {
+export async function generateStaticParams(): Promise<
+    TopicPageProps["params"][]
+> {
     return allTopics.map((topic) => ({
         slug: topic.slugAsParams.split("/"),
     }))
@@ -73,8 +74,8 @@ export async function generateMetadata({
     }
 }
 
-const TopicLayout = ({ params }: TopicPageProps) => {
-    const topic = getTopicFromParams(params)
+export default async function TopicPage({ params }: TopicPageProps) {
+    const topic = await getTopicFromParams(params)
 
     if (!topic) {
         notFound()
@@ -95,5 +96,3 @@ const TopicLayout = ({ params }: TopicPageProps) => {
         </div>
     )
 }
-
-export default TopicLayout

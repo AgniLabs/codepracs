@@ -1,4 +1,5 @@
 export type SiteConfig = typeof siteConfig
+import { env } from "@/env.mjs"
 
 export const siteConfig = {
   name: "codepracs",
@@ -13,7 +14,7 @@ export const siteConfig = {
   links: {
     twitter: "https://twitter.com/agnilabs",
     github: "https://github.com/AgniLabs/codepracs",
-    docs: "https://codepracs.com",
+    docs: env.NEXT_PUBLIC_APP_URL,
     about: "/about",
   },
   creator: "@AgniLabs",

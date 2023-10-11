@@ -1,6 +1,6 @@
 import "@/styles/globals.css"
 import { Metadata } from "next"
-
+import { env } from "@/env.mjs"
 import { siteConfig } from "@/config/site"
 import { fontMono, fontSans } from "@/lib/fonts"
 import { cn } from "@/lib/utils"
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: siteConfig.name,
     description: siteConfig.description,
-    url: 'https://codepracs.com',
+    url: env.NEXT_PUBLIC_APP_URL,
     siteName: `${siteConfig.name}' site`,
     locale: 'en_US',
     type: 'website',
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     creator: siteConfig.creator,
   },
-  metadataBase: new URL('https://codepracs.com'),
+  metadataBase: new URL(env.NEXT_PUBLIC_APP_URL),
 }
 
 interface RootLayoutProps {
