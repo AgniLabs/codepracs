@@ -8,6 +8,7 @@ import {
     CardHeader,
     CardTitle,
 } from "@/src/components/ui/card"
+import { Route } from 'next';
 
 type RoundedCardProps = {
     _id: string;
@@ -40,7 +41,7 @@ const RoundedCard: React.FC<RoundedCardProps> = ({ _id, title, description, date
                     </CardFooter>
                 )}
             </CardHeader>
-            <Link href={slug} className="absolute inset-0">
+            <Link href={slug as Route} className="absolute inset-0">
                 <span className="sr-only">View</span>
             </Link>
         </Card>

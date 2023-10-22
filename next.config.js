@@ -11,6 +11,9 @@ const nextConfig = {
   reactStrictMode: true,
   pageExtensions: ["md", "tsx", "ts", "jsx", "js", "mdx"], 
   swcMinify: true,
+  experimental: {
+    typedRoutes: true,
+  },
 }
 
 // Export using module.exports

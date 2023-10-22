@@ -58,13 +58,13 @@ function getFolders(params: { slug: string[] }): string[] | null {
     return folders || null;
 }
 
-export async function generateStaticParams(): Promise<
-    TopicPageProps["params"][]
-> {
-    return allTopics.map((topic) => ({
-        slug: topic.slugAsParams.split("/"),
-    }))
-}
+// export async function generateStaticParams(): Promise<
+//     TopicPageProps["params"][]
+// > {
+//     return allTopics.map((topic) => ({
+//         slug: topic.slugAsParams.split("/"),
+//     }))
+// }
 
 export async function generateMetadata({
     params,

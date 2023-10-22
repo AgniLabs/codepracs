@@ -5,6 +5,7 @@ import { NavItem } from "@/src/types/nav"
 import { siteConfig } from "@/src/config/site"
 import { cn } from "@/src/lib/utils"
 import { Icons } from "@/src/components/icons"
+import { Route } from "next"
 
 interface MainNavProps {
   items?: NavItem[]
@@ -24,7 +25,7 @@ export function MainNav({ items }: MainNavProps) {
               item.href && (
                 <Link
                   key={index}
-                  href={item.href}
+                  href={item.href as Route}
                   className={cn(
                     "flex items-center text-sm font-medium text-muted-foreground",
                     item.disabled && "cursor-not-allowed opacity-80"

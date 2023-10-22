@@ -5,6 +5,7 @@ import { buttonVariants } from "@/src/components/ui/button"
 import { Icons } from "@/src/components/icons"
 import { MainNav } from "@/src/components/main-nav"
 import { ThemeToggle } from "@/src/components/theme-toggle"
+import { Route } from "next"
 
 export function SiteHeader() {
   return (
@@ -14,7 +15,7 @@ export function SiteHeader() {
         <div className="flex flex-1 items-center justify-end space-x-4">
           <nav className="flex items-center space-x-1">
             <Link
-              href={siteConfig.links.github}
+              href={siteConfig.links.github as Route}
               target="_blank"
               rel="noreferrer"
             >
@@ -29,7 +30,7 @@ export function SiteHeader() {
               </div>
             </Link>
             <Link
-              href={siteConfig.links.twitter}
+              href={siteConfig.links.twitter as Route}
               target="_blank"
               rel="noreferrer"
             >

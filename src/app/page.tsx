@@ -2,8 +2,8 @@ import Link from "next/link"
 import { siteConfig } from "@/src/config/site"
 import { buttonVariants } from "@/src/components/ui/button"
 import Hero from "@/src/components/Hero/Hero"
-import RoundedCard from "@/src/components/RoundedCard/RoundedCard"
 import { AlertDemo } from "@/src/components/alert"
+import { Route } from "next"
 
 export default function IndexPage() {
 
@@ -16,7 +16,7 @@ export default function IndexPage() {
       <Hero />
       <div className="flex gap-4">
         <Link
-          href={siteConfig.links.topics}
+          href={siteConfig.links.topics as Route}
           rel="noreferrer"
           className={buttonVariants()}
         >
