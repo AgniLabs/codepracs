@@ -44,7 +44,7 @@ async function getMatchingTopics(params: { slug: string[] }) {
     return filteredTopics.length > 0 ? filteredTopics : null;
 }
 
-function getFolders(params: { slug: string[] }): string[] | null {
+async function getFolders(params: { slug: string[] }): Promise<string[] | null> {
     const slug = params?.slug?.join("/");
     const folderPath = path?.join(process.cwd(), slug);
 
@@ -58,13 +58,13 @@ function getFolders(params: { slug: string[] }): string[] | null {
     return folders || null;
 }
 
-// export async function generateStaticParams(): Promise<
-//     TopicPageProps["params"][]
-// > {
-//     return allTopics.map((topic) => ({
-//         slug: topic.slugAsParams.split("/"),
-//     }))
-// }
+export async function generateStaticParams(): Promise<
+    TopicPageProps["params"][]
+> {
+    return allTopics.map((topic) => ({
+        slug: topic.slugAsParams.split("/"),
+    }))
+}
 
 export async function generateMetadata({
     params,
@@ -109,7 +109,7 @@ export async function generateMetadata({
 }
 
 export default async function TopicPage({ params }: TopicPageProps) {
-    const folders = getFolders(params)
+    const folders = await getFolders(params)
     const availableTopics = await getMatchingTopics(params)
     const topic = await getTopicFromParams(params)
     const slug = `/${params?.slug?.join("/") || ''}`;
