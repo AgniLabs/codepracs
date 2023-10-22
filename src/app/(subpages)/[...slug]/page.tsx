@@ -9,7 +9,6 @@ import "@/src/styles/mdx.css"
 import RoundedCard from '@/src/components/RoundedCard/RoundedCard'
 import fs from 'fs';
 import path from 'path';
-import { sl } from 'date-fns/locale'
 import FolderCards from '@/src/components/FolderCards/FolderCards'
 
 interface TopicPageProps {
@@ -58,8 +57,6 @@ function getFolders(params: { slug: string[] }): string[] | null {
 
     return folders || null;
 }
-
-
 
 export async function generateStaticParams(): Promise<
     TopicPageProps["params"][]
@@ -112,58 +109,59 @@ export async function generateMetadata({
 }
 
 export default async function TopicPage({ params }: TopicPageProps) {
-    // const folders = getFolders(params)
-    // const availableTopics = await getMatchingTopics(params)
-    // const topic = await getTopicFromParams(params)
-    // const slug = `/${params?.slug?.join("/") || ''}`;
+    const folders = getFolders(params)
+    const availableTopics = await getMatchingTopics(params)
+    const topic = await getTopicFromParams(params)
+    const slug = `/${params?.slug?.join("/") || ''}`;
 
-    // if (topic) {
-    //     return (
-    //         <div>
-    //             <h1 className='mt-2 block text-center text-3xl font-extrabold leading-8 tracking-tight sm:text-4xl'>
-    //                 {topic.title}
-    //             </h1>
-    //             <time className="my-4 block text-sm text-zinc-400" dateTime={topic.date}>
-    //                 {format(parseISO(topic.date), 'LLLL d, yyyy')}
-    //             </time>
-    //             <article className="prose dark:prose-invert">
-    //                 {/* <MDXContent components={mdxComponents} /> */}
-    //             </article>
-    //             <Mdx code={topic.body.code} />
-    //         </div>
-    //     )
-    // }
+    if (topic) {
+        return (
+            <div>
+                <h1 className='mt-2 block text-center text-3xl font-extrabold leading-8 tracking-tight sm:text-4xl'>
+                    {topic.title}
+                </h1>
+                <time className="my-4 block text-sm text-zinc-400" dateTime={topic.date}>
+                    {format(parseISO(topic.date), 'LLLL d, yyyy')}
+                </time>
+                <article className="prose dark:prose-invert">
+                    {/* <MDXContent components={mdxComponents} /> */}
+                </article>
+                <Mdx code={topic.body.code} />
+            </div>
+        )
+    }
 
-    // if (availableTopics || folders) {
-    //     return (
-    //         <>
-    //             {folders ? <FolderCards slug={slug} folders={folders} /> : <p>No topic folders published.</p>}
-    //             <div className="mt-10 space-y-12 border-t border-gray-200 pt-10 dark:border-gray-700">
+    if (availableTopics || folders) {
+        return (
+            <>
+                {folders ?
+                    <FolderCards slug={slug} folders={folders} />
+                    :
+                    <h1 className='mt-2 block text-center text-3xl font-extrabold leading-8 tracking-tight sm:text-4xl'>
+                        No sub-topic folders published
+                    </h1>}
+                <div className="mt-10 space-y-12 border-t border-gray-200 pt-10 dark:border-gray-700">
 
-    //                 {availableTopics?.length ? (
-    //                     <div className="grid gap-4 md:grid-cols-2 md:gap-6">
-    //                         {availableTopics.map((availableTopic) => (
-    //                             <RoundedCard key={availableTopic._id} _id={availableTopic._id} title={availableTopic.title} description={availableTopic.description} date={availableTopic.date} slug={availableTopic.slug} />
-    //                         ))}
-    //                     </div>
-    //                 ) : (
-    //                     <p>No topics published.</p>
-    //                 )}
+                    {availableTopics?.length ? (
+                        <div className="grid gap-4 md:grid-cols-2 md:gap-6">
+                            {availableTopics.map((availableTopic) => (
+                                <RoundedCard key={availableTopic._id} _id={availableTopic._id} title={availableTopic.title} description={availableTopic.description} date={availableTopic.date} slug={availableTopic.slug} />
+                            ))}
+                        </div>
+                    ) : (
+                        <h1 className='mt-2 block text-center text-3xl font-extrabold leading-8 tracking-tight sm:text-4xl'>
+                            No topics published
+                        </h1>
+                    )}
 
-    //             </div>
-    //         </>
-    //     )
-    // }
+                </div>
+            </>
+        )
+    }
 
-    // if (!topic || !availableTopics) {
-    //     notFound()
-    // }
-
-    return (
-        <h1>
-            TEST FOR NOW
-        </h1>
-    )
+    if (!topic || !availableTopics) {
+        notFound()
+    }
 
 
 }

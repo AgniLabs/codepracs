@@ -14,7 +14,9 @@ export default function FolderCards({ slug, folders }: FolderCardsProps) {
                 ))}
             </div>
         ) : (
-            <p>No topic folders published.</p>
+            <h1 className='mt-2 block text-center text-3xl font-extrabold leading-8 tracking-tight sm:text-4xl'>
+                No sub-topic folders published
+            </h1>
         )
     }</>)
 }

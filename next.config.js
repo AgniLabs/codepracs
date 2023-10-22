@@ -9,7 +9,7 @@ import("./env.mjs").catch((err) => {
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  pageExtensions: ["md", "tsx", "ts", "jsx", "js", "md", "mdx"], // Removed duplicate "md"
+  pageExtensions: ["md", "tsx", "ts", "jsx", "js", "mdx"], 
   swcMinify: true,
 }
 
