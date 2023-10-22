@@ -53,6 +53,7 @@
     "eslint": "^8.44.0",
     "eslint-config-next": "latest",
     "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-tailwindcss": "^3.13.0",
     "husky": "^8.0.0",
     "lint-staged": "^14.0.1",
     "prettier": "^3.0.3",
