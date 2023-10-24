@@ -4,7 +4,7 @@ import {
     Alert,
     AlertDescription,
     AlertTitle,
-} from "@/src/components/ui/alert"
+} from "~/components/ui/alert"
 
 type AlertDemoProps = {
     title: string;

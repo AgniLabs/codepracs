@@ -1,6 +1,6 @@
 import Link from "next/link"
 
-import { cn } from "@/src/lib/utils"
+import { cn } from "~/lib/utils"
 import { Route } from "next"
 
 interface CardProps extends React.HTMLAttributes<HTMLDivElement> {

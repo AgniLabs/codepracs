@@ -1,8 +1,8 @@
 import Link from "next/link"
-import { siteConfig } from "@/src/config/site"
-import { buttonVariants } from "@/src/components/ui/button"
-import Hero from "@/src/components/Hero/Hero"
-import { AlertDemo } from "@/src/components/alert"
+import { siteConfig } from "~/config/site"
+import { buttonVariants } from "~/components/ui/button"
+import Hero from "~/components/Hero/Hero"
+import { AlertDemo } from "~/components/alert"
 import { Route } from "next"
 
 export default function IndexPage() {

@@ -22,7 +22,8 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./*"],
-      "@*": ["src/app/*"],
+      "~/*": ["./src/*"],
+      "@app/*": ["src/app/*"],
       "contentlayer/generated": ["./.contentlayer/generated"]
     },
     "plugins": [

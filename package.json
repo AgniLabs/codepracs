@@ -1,11 +1,28 @@
 {
   "name": "codepracs",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "private": true,
+  "homepage": "https://github.com/AgniLabs/codepracs#readme",
+  "description": "The go-to place where all sorts of developers can get best practices with practical and proven tips, techniques, and guides to feel ready to jump right in",
+  "bugs": {
+    "url": "https://github.com/AgniLabs/codepracs/issues",
+    "email": "adiaddxyz@gmail.com"
+  },
   "author": {
     "name": "AgniLabs",
     "url": "https://twitter.com/AgniLabs"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AgniLabs/codepracs.git"
+  },
+  "keywords": [
+    "codepracs",
+    "best practices",
+    "next.js",
+    "coding best practices",
+    "typescript"
+  ],
   "scripts": {
     "dev": "next dev",
     "build": "next build",

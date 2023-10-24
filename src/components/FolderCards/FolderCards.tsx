@@ -1,7 +1,7 @@
 import RoundedCard from "../RoundedCard/RoundedCard";
 
 type FolderCardsProps = {
-    slug: string;
+    slug?: string;
     folders: string[];
 };
 

@@ -7,7 +7,7 @@ This is the repository for codepracs, the go-to place where all sorts of develop
 ```bash
 bunx create-next-app -e https://github.com/AgniLabs/codepracs
 cd codepracs
-sh .env.example
+source .env.example
 bun run dev
 ```
 

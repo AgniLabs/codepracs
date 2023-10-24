@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { formatDate } from "@/src/lib/utils"
+import { formatDate } from "~/lib/utils"
 import {
     Card,
     CardContent,
@@ -7,7 +7,7 @@ import {
     CardFooter,
     CardHeader,
     CardTitle,
-} from "@/src/components/ui/card"
+} from "~/components/ui/card"
 import { Route } from 'next';
 
 type RoundedCardProps = {

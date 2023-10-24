@@ -3,13 +3,14 @@ import { format, parseISO } from 'date-fns'
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { env } from "@/env.mjs"
-import { absoluteUrl, cn } from "@/src/lib/utils"
-import { Mdx } from "@/src/components/mdx-components"
-import "@/src/styles/mdx.css"
-import RoundedCard from '@/src/components/RoundedCard/RoundedCard'
+import { absoluteUrl, cn } from "~/lib/utils"
+import { Mdx } from "~/components/mdx-components"
+import "~/styles/mdx.css"
+import RoundedCard from '~/components/RoundedCard/RoundedCard'
 import fs from 'fs';
 import path from 'path';
-import FolderCards from '@/src/components/FolderCards/FolderCards'
+import FolderCards from '~/components/FolderCards/FolderCards'
+export const dynamic = 'force-dynamic';
 
 interface TopicPageProps {
     params: {
@@ -61,8 +62,9 @@ async function getFolders(params: { slug: string[] }): Promise<string[] | null> 
 export async function generateStaticParams(): Promise<
     TopicPageProps["params"][]
 > {
+
     return allTopics.map((topic) => ({
-        slug: topic.slugAsParams.split("/"),
+        slug: topic.slugAsParams.split("/") || "404",
     }))
 }
 
@@ -109,6 +111,7 @@ export async function generateMetadata({
 }
 
 export default async function TopicPage({ params }: TopicPageProps) {
+    params.slug.unshift('topics');
     const folders = await getFolders(params)
     const availableTopics = await getMatchingTopics(params)
     const topic = await getTopicFromParams(params)
