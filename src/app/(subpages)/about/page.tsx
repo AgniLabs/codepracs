@@ -52,7 +52,7 @@ const About = () => {
           <Link
             target="_blank"
             rel="noreferrer"
-            href={`${siteConfig.links.github}/blob/next/CONTRIBUTING.md` as Route}
+            href={`${siteConfig.links.github}/blob/main/CONTRIBUTING.md` as Route}
           >
             contributing
           </Link>
