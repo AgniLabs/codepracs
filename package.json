@@ -1,6 +1,6 @@
 {
   "name": "codepracs",
-  "version": "0.1.0",
+  "version": "0.0.0",
   "private": true,
   "homepage": "https://github.com/AgniLabs/codepracs#readme",
   "description": "The go-to place where all sorts of developers can get best practices with practical and proven tips, techniques, and guides to feel ready to jump right in",
@@ -33,6 +33,7 @@
     "typecheck": "tsc --noEmit",
     "format:write": "prettier --write \"**/*.{ts,tsx,mdx}\" --cache",
     "format:check": "prettier --check \"**/*.{ts,tsx,mdx}\" --cache",
+    "check": "bun run lint && bun run typecheck && bun run format:check",
     "prepare": "husky install | chmod ug+x .husky/*"
   },
   "dependencies": {

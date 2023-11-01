@@ -11,7 +11,7 @@ export default function IndexPage() {
     <section className="container flex flex-col items-center justify-center gap-6 pb-8 pt-6 md:py-10">
       <AlertDemo
         title="Heads up!"
-        description="NOTE! - the site is still under development but please feel free to view the code on GitHub and contribute!"
+        description="NOTE! - this site is still a work in progress! Please feel free to view the code on GitHub and contribute!"
       />
       <Hero />
       <div className="flex gap-4">
