@@ -9,8 +9,7 @@ import remarkGfm from "remark-gfm"
 const computedFields: import("contentlayer/source-files").ComputedFields = {
   slug: {
     type: "string",
-    resolve: (topic: { _raw: { flattenedPath: any } }) =>
-      `/topics/${topic._raw.flattenedPath}`,
+    resolve: (topic: { _raw: { flattenedPath: any } }) => `/topics/${topic._raw.flattenedPath}`,
   },
   slugAsParams: {
     type: "string",
@@ -61,14 +60,10 @@ export default makeSource({
               node.children = [{ type: "text", value: " " }]
             }
           },
-          onVisitHighlightedLine(node: {
-            properties: { className: string[] }
-          }) {
+          onVisitHighlightedLine(node: { properties: { className: string[] } }) {
             node.properties.className.push("line--highlighted")
           },
-          onVisitHighlightedWord(node: {
-            properties: { className: string[] }
-          }) {
+          onVisitHighlightedWord(node: { properties: { className: string[] } }) {
             node.properties.className = ["word--highlighted"]
           },
         },

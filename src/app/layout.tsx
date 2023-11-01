@@ -28,12 +28,12 @@ export const metadata: Metadata = {
     description: siteConfig.description,
     url: env.NEXT_PUBLIC_APP_URL,
     siteName: `${siteConfig.name}' site`,
-    locale: 'en_US',
-    type: 'website',
+    locale: "en_US",
+    type: "website",
   },
   twitter: {
     title: siteConfig.name,
-    card: 'summary_large_image',
+    card: "summary_large_image",
     creator: siteConfig.creator,
   },
   metadataBase: new URL(env.NEXT_PUBLIC_APP_URL),
@@ -67,4 +67,3 @@ export default function RootLayout({ children }: RootLayoutProps) {
     </>
   )
 }
-
