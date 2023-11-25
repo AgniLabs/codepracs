@@ -23,4 +23,6 @@ export const siteConfig = {
     topics: "/topics",
   },
   creator: "@AgniLabs",
+  url: "https://www.codepracs.com",
+  ogImage: "https://www.codepracs.com/codepracs-OG.png",
 }

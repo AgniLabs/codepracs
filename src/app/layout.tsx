@@ -35,6 +35,8 @@ export const metadata: Metadata = {
     title: siteConfig.name,
     card: "summary_large_image",
     creator: siteConfig.creator,
+    description: siteConfig.description,
+    images: [`${siteConfig.url}/codepracs-OG.png`],
   },
   metadataBase: new URL(env.NEXT_PUBLIC_APP_URL),
 }
